@@ -1,4 +1,5 @@
 import csv
+from sklearn.model_selection import train_test_split
 import numpy as np
 
 
@@ -13,6 +14,8 @@ def read(name):
                 try:
                     f.append(float(r))  # se guardan los datos
                 except ValueError as e:
-                    target.append(r)  # se guarda el resultado en una lista distinta
+                    b = 0 if r == 'M' else 1
+                    target.append(b)  # se guarda el resultado en una lista distinta
+
             data.append(f[1:])  # Se elimina el id
     return {'data': data, 'target': target}
