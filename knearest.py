@@ -6,6 +6,7 @@ from sklearn.model_selection import KFold
 from sklearn.model_selection import cross_val_score
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LogisticRegression
+from scipy.stats import ttest_ind
 
 file = f.read("wdbc")  # lectura del archivo
 X = file["data"]
@@ -25,9 +26,7 @@ f1_knn = cross_val_score(knn, X, y, cv=5, scoring='f1')
 print("|| F1 K-Neighbors Classifier ||\n")
 print(f1_knn)
 
-
 print("\n")
-
 
 logreg = LogisticRegression()
 scores_log = cross_val_score(logreg, X, y, cv=5, scoring='accuracy')
@@ -48,6 +47,10 @@ plt.legend()
 plt.grid()
 plt.show()
 
+result = ttest_ind(scores_knn, scores_log)
+mean_knn = scores_knn.mean()
+mean_log = scores_log.mean()
+print(result)
 
 # knn.fit(X, y)  # aprende relación de x e y
 # y_pred = knn.predict(X)  # predicción

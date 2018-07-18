@@ -1,4 +1,5 @@
 
+# Problema
  
 Estimados alumnos/as:
 
@@ -13,3 +14,12 @@ Debe entregar el Jupyter Notebook, con código comentado y conclusiones finales.
 Saludos
 
 Héctor
+
+# Conclusiones
+
+De lo anteriormente descrito, se realizó un test de hipótesis media para estimar que método de clasificación obtenía el mejor desempeño según la métrica Accuracy. El test arrojó los siguientes resultados: 
+
+t test = -1.3663361600481534
+p-value = 0.2090000044038142
+
+Con el valor obtenido de T-test se puede concluir que los modelos difieren en cuanto al desempeño obtenido, siendo el método Logistic Regression el que genera un mejor resultado promediando una precisión de 0.9526 frente a 0.9316 del método K-neighbors Classifier.
